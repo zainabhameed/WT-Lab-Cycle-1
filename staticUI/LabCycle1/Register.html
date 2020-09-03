@@ -52,18 +52,91 @@ body {
     <head>
         <link rel="stylesheet" href="signup.css">
     </head>
-    
+    <script type='text/javascript'>
+    function validform(){
+    	var b= document.getElementById("fpass").value;
+    	var e=document.getElementById("fname").value; 
+    	var f=document.getElementById("lname").value;
+    	var d=document.getElementById("fmail").value; 
+    	 if(b=="" || d=="" || e==""||f==""){
+    		 alert("please fill the details");
+    		 return false;
+    	 }
+    }
+function myFunction() {
+ 
+  var b=document.getElementById("fpass").value;
+  if (b=="") {
+	  alert("password should not be empty");
+  }
+  else if(b.length<6){  
+	  alert("Password must be at least 6 characters long.");  
+	  
+  }  
+} 
+function firstname(){
+	var e=document.getElementById("fname").value;
+	var letters = /^[0-9]+$/;
+	if (e=="") {
+		  alert("firsname should not be empty");
+	  }
+	else if(e.match(letters))
+	     {
+		 alert("firstname should not be number");
+	     }
+	  
+
+	  else if(e.length<4){  
+		  alert("firstname must be at least 4 characters long.");  
+		  
+	  }  
+	} 
+
+function lastname(){
+	var f=document.getElementById("lname").value;
+	var letters = /^[0-9]+$/;
+	if (f=="") {
+		  alert("lastname should not be empty");
+	  }
+	else if(f.match(letters))
+    {
+	 alert("lastname should not be number");
+    }
+	  else if(f.length<3){  
+		  alert("lastname must be at least 3 characters long.");  
+		  
+	  }  
+	} 
+
+function validateEmail(emailField){
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if ((emailField.value) == "") 
+    {
+    	alert('email should not be empty');
+    return false;
+
+}
+    if (reg.test(emailField.value) == false) 
+    {
+        alert('Invalid Email Address');
+        return false;
+    }
+     
+    return true;
+}
+</script>
     <body>
         <div class="filter"></div>
         <div class="container">
            <h1>Register</h1>
-                <form class="form">
-                    <input type="text" class="fullname" placeholder="Full Name" required>
-                    <input type="email" class="email" placeholder="someone@abc.com" required>
-                    <input type="text" class="username" placeholder="Username" required>
-                    <input type="password" class="password" placeholder="Password" required>
+                <form class="form" method="post" action="Login.html">
+                    <input type="name" class="firstname" placeholder="First Name" onblur="firstname()" id="fname">
+                    <input type="name" class="Lastname" placeholder="Last Name" onblur="lastname()" id="lname">
+                    <input type="text" class="email" placeholder="Email" onblur="validateEmail(this)" id="fmail">
+                   
+                    <input type="password" class="password" placeholder="Password" onblur="myFunction()" id="fpass">
                     <form method=post action="Login.html">
-                    <button>Register</button>
+                    <button onclick="return validform()">Register</button>
             
                 </form>
             </div>

@@ -55,7 +55,7 @@ userprofile</title>
 <style>
 body{
     height: 100vh;
-    background-image: url(https://www.a2hosting.com/blog/content/uploads/2017/08/QUIC-Hosting.jpg);
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrDlX6zaneCG2iU_wo4EWF8Qto6g0F2fOP7A&usqp=CAU);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,41 +63,106 @@ body{
 </style>
 </head>
 <center>
-
+ <script type='text/javascript'>
+ function validform(){
+	 var e=document.getElementById("fname").value;
+	 var b=document.getElementById("fpass").value;
+	 var c=document.getElementById("pno").value;
+	 var g=document.getElementById("add").value;
+	 
+	
+	  if(e==""||b==""||c==""||g==""){
+		 alert("please fill all the details");
+		 return false;
+ }
+	 
+ }
+ 
+function username(){
+	var e=document.getElementById("fname").value;
+	if (e=="") {
+		  alert("username should not be empty");
+	  }
+	else if(!isNaN(e)){
+		alert("username should not contain numbers");
+	}
+	  else if(e.length<6){  
+		  alert("username must be at least 6 characters long.");  
+		  
+	  }  
+	} 
+function myFunction() {
+	 
+	  var b=document.getElementById("fpass").value;
+	  if (b=="") {
+		  alert("password should not be empty");
+	  }
+	  else if(b.length<6){  
+		  alert("Password must be at least 6 characters long.");  
+		  
+	  }  
+	} 
+function pnum(){
+	 var c=document.getElementById("pno").value;
+	 var numbers = /^[0-9]+$/;
+	 if (c=="") {
+		  alert("phone no should not be empty");
+	  }
+	 else if(!(c.match(numbers)))
+    {
+	 alert("phone no should not be letter");
+    }
+	 else if(!(c.length==10)) {  
+		  alert("phone no must be of 10 digits");  
+	  } 
+}
+function padd(){
+	 var g=document.getElementById("add").value;
+	 if (g=="") {
+		  alert("address should not be empty");
+	  }
+}
+	</script>
 <strong><h1>WELCOME TO ONLINE BOOK STORE</h1></strong>
 <h2>EDIT YOUR PROFILE HERE...</h2>
-<form method="post" action="catalog.html" >
+<form method="post" action="Books catalog.html" >
 <center>
 <table align="center">
 <tr>
 <td><h4>EDIT USER NAME</td>
-<td><input type="text" color="white;" ></td>
+<td><input type="name" color="white" onblur="username()" id="fname"></td>
 <tr>
 <tr>
 <tr><tr><tr><tr><tr><tr>
 
 <td><h4>EDIT PASSWORD</td>
-<td><input type="password"></td>
+<td><input type="password" onblur="myFunction()" id="fpass"></td>
 </tr>
 <tr>
 <tr>
 <tr>
 <tr><tr><tr><tr><tr><tr>
 
-<option >
+<option>
 <td><h4>MALE &nbsp;&nbsp;
-<input type="radio" name="sex" id="male"></td>
+<input type="radio" name="Gender" id="male"></td>
 <td><h4>FEMALE &nbsp; &nbsp;
-<input type="radio" name="sex" id="female" ></td>
+<input type="radio" name="Gender" id="female"></td>
 </option>
 </tr>
 <tr>
 <tr>
 <tr><tr><tr><tr><tr><tr>
-
+<tr>
+<td><h4>EDIT PHONE NO</td>
+<td><input type="text" color="white" onblur="pnum()" id="pno"></td>
+<tr>
+<tr>
+<tr><tr><tr><tr><tr><tr>
+<tr>
 <tr>
 <td><h4>EDIT ADDRESS</h4></td>
-<td><textarea name="address" rows=5 cols=19>
+<td><textarea input type = "text" name="address" onblur="padd()" id="add" rows=5 cols=19>
 </textarea>
 </td>
 <tr>
@@ -106,8 +171,7 @@ body{
 <tr><tr><tr><tr><tr><tr>
 
 <td>
-<input type="SUBMIT" value="SUBMIT" ></td>
-</tr>
+<button onclick="return validform()">Submit </button>
 </center>
 </form>
 

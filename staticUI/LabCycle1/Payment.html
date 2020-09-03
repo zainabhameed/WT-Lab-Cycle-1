@@ -125,7 +125,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
    height: 100vh;
-    background-image: url("https://cdn.hipwallpaper.com/i/42/13/9j8Eni.jpg");
+    background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-White-Pattern-Background-Image.jpg");
     background-size:100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -151,13 +151,105 @@ span.price {
 }
  
  </style>
-</head>
- 
+
+<script type='text/javascript'>
+function Validform(){
+	
+	var e=document.getElementById("cname").value;
+	var h=document.getElementById("ccnum").value;
+	 var v=document.getElementById("expmonth").value;
+	 var w=document.getElementById("expyear").value;
+	 var x=document.getElementById("cvv").value;
+	 if(e==""|| h==""||v==""|| w==""||x==""){
+		 alert("please fill the details");
+		 return false;
+	 }
+
+}
+ function Fullname(){
+	var e=document.getElementById("cname").value;
+	var letters = /^[0-9]+$/;
+	if (e=="") {
+		  alert("name should not be empty");
+	  }
+	else if(e.match(letters))
+	     {
+		 alert("name should not be number");
+	     }
+	  
+
+	  else if(e.length<4){  
+		  alert("name must be at least 4 characters long.");  
+		  
+	  }  
+
+	} 
+ function Cardnum(){
+	 var h=document.getElementById("ccnum").value;
+	 var numbers = /^[0-9]+$/;
+	 if (h=="") {
+		  alert("number should not be empty");
+	  }
+	 else if(!(h.match(numbers)))
+     {
+	 alert("number should not be letter");
+     }
+	 else if(!(h.length==16)){  
+		  alert("number must be at least 16 digits long.");  
+		  
+	  } 
+  
+	 
+ }
+ function Exmon(){
+	 var v=document.getElementById("expmonth").value;
+	 var numbers = /^[0-9]+$/;
+	 if (v=="") {
+		  alert("month should not be empty");
+	  }
+	 else if(v.match(numbers))
+     {
+	 alert("month should not be number");
+     }
+ }
+	 function Expyear(){
+		 var w=document.getElementById("expyear").value;
+		 var numbers = /^[0-9]+$/;
+		 if (w=="") {
+			  alert("year should not be empty");
+		  }
+		 else if(!(w.match(numbers)))
+	     {
+		 alert("year should not be letter");
+	     }
+		 else if(!(w.length==4)) {  
+			  alert("year must be of 4 digits");  
+		  } 
+   }
+	 function Cvv(){
+		 var x=document.getElementById("cvv").value;
+		 var numbers = /^[0-9]+$/;
+		 var len=x.length;
+		 if (x=="") {
+			  alert("cvv should not be empty");
+		  }
+		 else if(!(x.match(numbers)))
+	     {
+		 alert("cvv should not be letter");
+	     }
+		 else if(!(len==3)){  
+			  alert("number must be at least 3 digits.");  
+			  
+		  } 
+		 
+	 }
+ </script>
+ </head>
  <div class="row" style=" margin-left : 35%;
   margin-top : 2%;margin-right: 40%;">
   <div class="col-75">
     <div class="container" >
-      <form >
+     
 
 
           <div class="col-50">
@@ -170,18 +262,31 @@ span.price {
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" id="cname" name="name" placeholder="John More Doe" onblur="return Fullname()" >
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" onblur="return Cardnum()">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September" onblur="return Exmon()">
+          
             
+     
+        
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018" onblur="return Expyear()">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352" onblur="return Cvv()">
+              </div>
             </div>
           </div>
 
-        </div>
+        
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label><br>
-        <a class="btn"  style="text-decoration:none" href="Order Conformation.html" >Continue to checkout</a>
+        <a class="btn"  style="text-decoration:none" href="Order Conformation.html" onclick="return Validform()">Continue to checkout</a>
+        
       </form>
     </div>
   </div>

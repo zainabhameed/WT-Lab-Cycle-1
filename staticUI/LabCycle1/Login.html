@@ -47,21 +47,62 @@ body {
   <a href="Books catalog.html">Books catalog</a>
   
 </div>
-    
+
+<script type='text/javascript'>
+function validform(){
+	var c= document.getElementById("fpass").value;
+	 var d=document.getElementById("fmail").value; 
+	 if(c=="" || d==""){
+		 alert("please fill the details");
+		 return false;
+	 }
+}
+function myFunction() {
+ 
+  var b=document.getElementById("fpass").value;
+  if (b=="") {
+	  alert("password should not be empty");
+  }
+  else if(b.length<6){  
+	  alert("Password must be at least 6 characters long.");  
+	  
+  }  
+} 
+function validateEmail(emailField){
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if ((emailField.value) == "") 
+    {
+    	alert('email should not be empty');
+    return false;
+
+}
+    if (reg.test(emailField.value) == false) 
+    {
+        alert('Invalid Email Address');
+        return false;
+    }
+     
+    return true;
+}
+</script>
     <head>
         <link rel="stylesheet" href="decoration.css">
     </head>
     
-    <body>
+    <body >
         <div class="filter"></div>
         <div class="container">
            <h1>Login</h1>
             <form>
-                <label>Username</label><br>
-                <input type="text"><br>
+                
+                <label>Mail</label><br>
+                <input type="text" onblur="return validateEmail(this)" id="fmail"></br>
                 <label>Password</label><br>
-                <input type="password"><br>
-                <button>Log in</button>
+                <input type="password" onblur="return myFunction()" id="fpass"><br>
+                
+               
+                <button onclick="validform()">Log in </button>
+                
             </form>
         </div>
         

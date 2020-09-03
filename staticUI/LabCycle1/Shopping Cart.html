@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
    height: 100vh;
-   background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-040.jpg");
+   background-image: url("https://img.freepik.com/free-vector/brush-strokes-background_53876-89327.jpg?size=626&ext=jpg");
     background-size:100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,35 @@ body {
   <a href="Books catalog.html">Books catalog</a>
   
 </div>
-    
+ <script type='text/javascript'>
+function validform(){
+	var c= document.getElementById("q").value;
+	 var d=document.getElementById("a").value; 
+	 if(c=="" || d==""){
+		 alert("please fill the details");
+		 return false;
+	 }
+} 
+function prize(){
+	var c= document.getElementById("q").value;
+	 var d=document.getElementById("a").value; 
+	 var f=(500*c)+100;
+	 if(d==null||d==""){
+		 alert("amount field should not be empty");
+	 }
+	 else if(!(f==d)){
+		 alert("please fill the valid amount");
+		 return false;
+	 }
+} 
+function quantity(){
+	var c= document.getElementById("q").value; 
+	 if(c==null || c==""){
+		 alert("quantity field should not be empty");
+		 return false;
+	 }
+} 
+</script>
 <body bgcolor="cyan">
 <center><h1>
 SHOPPING CART</h1></center>
@@ -78,13 +106,20 @@ SHOPPING CART</h1></center>
 <td><b>
 QUANTITY</b></td>
 <td>
-<input type="text" id="q">
+<input type="text" id="q" onblur="return quantity()">
+</td></tr>
+<tr>
+<tr>
+<td><b>
+AMOUNT</b></td>
+<td>
+<input type="text" id="a" onblur="return prize()">
 </td></tr>
 <tr>
 <td></td>
 <td>
 <form method=post action="Payment.html">
-<input type="submit" value=ok >
+<button onclick="return validform()">Submit </button>
 
 </form>
 </td></tr>
