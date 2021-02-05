@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#A6DCE5;  
+    font-family: 'Arial';  
+} 
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #0080c0; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.button1 {width: 60px;
+          height: 18px;
+          }
+           
+.catalog{  
+        width: 800px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #ed7eed;  
+        border-radius: 15px ;  
+          
+}  
+h2{  
+    text-align: center;  
+    color: #000000;  
+    padding: 20px;  
+}  
+label{  
+    color: #000000;  
+    font-size: 17px;  
+}  
+
+#title{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#nobooks{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#cofbook{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#dateString{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;     
+      
+}  
+<!-- #ok{  
+    width: 100px;  
+    height: 20px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: #000000;  
+  
+  
+} 
+#clear{  
+    width: 100px;  
+    height: 20px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: #000000;  
+  
+  
+} -->
+span{  
+    color: white;  
+    font-size: 17px;
+    color: #000000;  
+}  
+a{  
+    float: right;  
+    background-color: #333;  
+}
